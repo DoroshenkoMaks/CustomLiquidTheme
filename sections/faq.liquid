@@ -4,6 +4,10 @@
     text-align: center;
     color: {{ section.settings.heading_color }};
   }
+  .question--block .question {
+    padding: 1rem;
+    font-size: 1.8rem;
+  }
 {%- endstyle -%}
 
 <div class="section page-width" style="background-color: {{ section.settings.section_color}}">
@@ -39,8 +43,14 @@
       {
         "type": "color",
         "id": "heading_color",
-        "label": "Heading colorx",
-        "default": "#FFFFFF"
+        "label": "Heading color",
+        "default": "#000000"
+      },
+      {
+        "type": "checkbox",
+        "id": "full-background",
+        "label": "Fill full background",
+        "default": false
       }
     ],
     "blocks": [
