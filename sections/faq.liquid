@@ -2,10 +2,11 @@
   .section__heading {
     font-size: 4.8rem;
     text-align: center;
+    color: "{{ section.settings.heading_color }}";
   }
 {%- endstyle -%}
 
-<div class="section page-width" style="background-color: {{ section.settings.color_accent }}">
+<div class="section page-width" style="background-color: {{ section.settings.section_color}}">
   {%- if section.settings.section__heading != blank -%}
     <h2 class="section__heading h2">{{ section.settings.section__heading | escape }}</h2>
   {%- endif -%}
@@ -31,7 +32,13 @@
       },
       {
         "type": "color",
-        "id": "color_accent",
+        "id": "section_color",
+        "label": "Section Background",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
         "label": "Section Background",
         "default": "#FFFFFF"
       }
