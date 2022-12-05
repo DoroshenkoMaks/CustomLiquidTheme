@@ -212,7 +212,7 @@
     "304e31df-9f07-4665-9ffc-b8822883067f": {
       "type": "faq",
       "blocks": {
-        "e523f672-d8b9-4566-9382-2d904e6bb99e": {
+        "61281d14-ab15-491c-94f5-f6db18f18d46": {
           "type": "text",
           "settings": {
             "question": "Question",
@@ -221,10 +221,10 @@
         }
       },
       "block_order": [
-        "e523f672-d8b9-4566-9382-2d904e6bb99e"
+        "61281d14-ab15-491c-94f5-f6db18f18d46"
       ],
       "settings": {
-        "section__heading": "FAQ",
+        "section__heading": "FAQ j",
         "section_color": "#f07e7e",
         "heading_color": "#000000",
         "full-background": true
