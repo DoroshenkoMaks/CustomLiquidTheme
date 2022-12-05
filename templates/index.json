@@ -225,14 +225,23 @@
         "29baa73a-6d12-4242-bc1b-05b83d3da0b9": {
           "type": "text",
           "settings": {
-            "question": "Question",
-            "answer": "<p>fdjkdnfkjvdf<\/p>",
-            "is_open": false
+            "question": "Question 1",
+            "answer": "<p>answer 2<\/p>",
+            "is_open": true
+          }
+        },
+        "5f54d4df-0252-4996-97f6-026bb6257770": {
+          "type": "text",
+          "settings": {
+            "question": "Question 3",
+            "answer": "<p>Answer 3<\/p>",
+            "is_open": true
           }
         }
       },
       "block_order": [
-        "29baa73a-6d12-4242-bc1b-05b83d3da0b9"
+        "29baa73a-6d12-4242-bc1b-05b83d3da0b9",
+        "5f54d4df-0252-4996-97f6-026bb6257770"
       ],
       "settings": {
         "section__heading": "FAQ",
