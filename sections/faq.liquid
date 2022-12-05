@@ -2,15 +2,21 @@
   .section {
     position: relative;
   }
+  .section.background-full::after,
   .section.background-full::before {
     width: calc(100% - var(--page-width));
-    height: 6.2rem;
+    height: 100%;
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
-    transform: translateX(-100%);
+    /* transform: translateX(-100%); */
     background: {{ section.settings.section_color}};
+  }
+  .section.background-full::before {
+    left: 0;
+  }
+  .section.background-full::after {
+    right: 0;
   }
   .section__heading {
     font-size: 4.8rem;
@@ -23,7 +29,7 @@
   }
 {%- endstyle -%}
 
-<div class="section page-width background{% if section.settings.full-background %}-full{% endif%}"  style="background-color: {{ section.settings.section_color}}">
+<div class=" page-width background{% if section.settings.full-background %}-full{% endif %}"  style="background-color: {{ section.settings.section_color}}">
   {%- if section.settings.section__heading != blank -%}
     <h2 class="section__heading h2">{{ section.settings.section__heading | escape }}</h2>
   {%- endif -%}
