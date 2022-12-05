@@ -211,6 +211,18 @@
     },
     "304e31df-9f07-4665-9ffc-b8822883067f": {
       "type": "faq",
+      "blocks": {
+        "e523f672-d8b9-4566-9382-2d904e6bb99e": {
+          "type": "text",
+          "settings": {
+            "question": "Question",
+            "answer": "<p>Answer<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e523f672-d8b9-4566-9382-2d904e6bb99e"
+      ],
       "settings": {
         "section__heading": "FAQ",
         "section_color": "#f07e7e",
