@@ -237,11 +237,20 @@
             "answer": "<p>Answer<\/p>",
             "is_open": false
           }
+        },
+        "fe0f2e9e-74fc-401c-80db-3f855aa8fdcb": {
+          "type": "text",
+          "settings": {
+            "question": "Question",
+            "answer": "<p>Answer<\/p>",
+            "is_open": false
+          }
         }
       },
       "block_order": [
         "6fe208e9-e007-4e9e-b14f-5f56ae20ba50",
-        "055a1535-69d2-4f31-848a-d01f4ac33921"
+        "055a1535-69d2-4f31-848a-d01f4ac33921",
+        "fe0f2e9e-74fc-401c-80db-3f855aa8fdcb"
       ],
       "settings": {
         "section__heading": "FAQ",
