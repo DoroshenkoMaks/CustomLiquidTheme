@@ -43,16 +43,8 @@ console.log('Hi');
 document.querySelector(".question--block").addEventListener('click', (e)=> {
   e.stopPropagation();
   const answerText = document.querySelector(".answer");
-  console.log("done");
   answerText.classList.toggle("open");
 })
-
-  // const openAnswer = function() {
-  //   const answerText = document.querySelector(".answer");
-  //   console.log(done);
-  //     answerText.classList.toggle("open");
-  // }
-
 
 {% endjavascript %}
 
@@ -72,10 +64,7 @@ document.querySelector(".question--block").addEventListener('click', (e)=> {
     </div>
   {%- endfor -%}
 
-  <div class="question--block">
-    <div class="question">Question<div>
-    <p class="answer">Answer</p>
-  </div>
+ 
 
 
 </div>
