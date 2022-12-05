@@ -1,130 +1,116 @@
-
-
-
 {%- style -%}
-.section {
-  position: relative;
-}
-.background-full::before, 
-.background-full::after {
-  width: calc((100% - var(--page-width)) / 2);
-  height: 100%;
-  content: "";
-  position: absolute;
-  top: 0;
-  background: {{ section.settings.section_color }};
-}
-.background-full::before{
-  left: 0;
-}
-.background-full::after{
-  right: 0; 
-}
-.section__heading {
-  font-size: 4.8rem;
-  text-align: center;
-  color: {{ section.settings.heading_color }};
-}
-.question--block .question {
-  padding: 1rem;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-.answer {
-  display: none;
-}
-.answer.open {
-  display: block;
-}
+  .section {
+    position: relative;
+  }
+  .background-full::before,
+  .background-full::after {
+    width: calc((100% - var(--page-width)) / 2);
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    background: {{ section.settings.section_color }};
+  }
+  .background-full::before {
+    left: 0;
+  }
+  .background-full::after {
+    right: 0;
+  }
+  .section__heading {
+    font-size: 4.8rem;
+    text-align: center;
+    color: {{ section.settings.heading_color }};
+  }
+  .question--block .question {
+    padding: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  .answer {
+    display: none;
+  }
+  .answer.open {
+    display: block;
+  }
 {%- endstyle -%}
 
 {% javascript %}
-console.log('Hi');
-document.querySelector(".question--block").addEventListener('click', (e)=> {
-e.stopPropagation();
-const answerText = document.querySelector(".answer");
-answerText.classList.toggle("open");
-})
-
+  console.log('Hi');
+  document.querySelector(".question--block").addEventListener('click', (e) => {
+    e.stopPropagation();
+    const answerText = document.querySelector(".answer");
+    answerText.classList.toggle("open");
+  })
 {% endjavascript %}
 
 
 
+<div class="page-width background{% if section.settings.full-background %}-full{% endif %}" style="background-color: {{ section.settings.section_color }}">
+  {%- if section.settings.section__heading != blank -%}
+    <h2 class="section__heading h2">{{ section.settings.section__heading | escape }}</h2>
+  {%- endif -%}
 
-
-<div class="page-width background{% if section.settings.full-background %}-full{% endif %}"  style="background-color: {{ section.settings.section_color }}">
-{%- if section.settings.section__heading != blank -%}
-  <h2 class="section__heading h2">{{ section.settings.section__heading | escape }}</h2>
-{%- endif -%}
-
-{%- for block in section.blocks -%}
-  <div class="question--block">
-    <div onclick='openAnswer()' class="question">{{ block.settings.question }}<div>
-    <p class="answer">{{ block.settings.answer }}</p>
-  </div>
-{%- endfor -%}
-
-
-
-
+  {%- for block in section.blocks -%}
+    <div class="question--block">
+      <div onclick='openAnswer()' class="question">{{ block.settings.question }}</div>
+      <p class="answer">{{ block.settings.answer }}</p>
+    </div>
+  {%- endfor -%}
 </div>
 
 {% schema %}
-{
-  "name": "FAQ",
-  "class": "section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "section__heading",
-      "default": "FAQ",
-      "label": "Section Title"
+  {
+    "name": "FAQ",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section__heading",
+        "default": "FAQ",
+        "label": "Section Title"
 
-    },
-    {
-      "type": "color",
-      "id": "section_color",
-      "label": "Section Background",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading color",
-      "default": "#000000"
-    },
-    {
-      "type": "checkbox",
-      "id": "full-background",
-      "label": "Fill full background",
-      "default": false
-    }
-  ],
-  "blocks": [
-    {
-      "type": "text",
-      "name": "FAQ Block",
-      "settings": [
-        {
-          "type": "text",
-          "id": "question",
-          "default": "Question",
-          "label": "Add a question"
-        },
-        {
-          "type": "richtext",
-          "id": "answer",
-          "default": "<p>Answer</p>",
-          "label": "Add a answer"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "FAQ"
-      
-    }
-  ]
-}
+      }, {
+        "type": "color",
+        "id": "section_color",
+        "label": "Section Background",
+        "default": "#ffffff"
+      }, {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading color",
+        "default": "#000000"
+      }, {
+        "type": "checkbox",
+        "id": "full-background",
+        "label": "Fill full background",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "FAQ Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "default": "Question",
+            "label": "Add a question"
+          }, {
+            "type": "richtext",
+            "id": "answer",
+            "default": "<p>Answer</p>",
+            "label": "Add a answer"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FAQ"
+
+      }
+    ]
+  }
 {% endschema %}
