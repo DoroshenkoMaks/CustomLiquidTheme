@@ -26,8 +26,11 @@
     padding: 1rem;
     font-size: 1.8rem;
     cursor: pointer;
+    border: 1px solid #000;
   }
   .answer {
+    padding: 1rem;
+    border: 1px solid red;
     display: none;
   }
   .answer.open {
@@ -40,9 +43,10 @@
   document.querySelectorAll(".question").forEach(item => {
     item.addEventListener('click', (e) => {
 
-// console.log(section.settings.section__heading);
+      document.querySelectorAll('.answer').forEach(item => {
+        item.classList.remove('open');
+      });
 
-      document.querySelectorAll('.answer').forEach(item => item.classList.remove('open'));
       let answerText = item.nextElementSibling;
       answerText.classList.toggle('open');
     })
@@ -68,18 +72,18 @@
 
   <div class="question--block">
 
-    <div class="question">Question</div>
-    <p class="answer">Answer</p>
+    <div class="question">Question 1</div>
+    <p class="answer">Answer 1</p>
   </div>
   <div class="question--block">
 
-    <div class="question">Question</div>
-    <p class="answer open">Answer</p>
+    <div class="question">Question 2</div>
+    <p class="answer open">Answer 2</p>
   </div>
   <div class="question--block">
 
-    <div class="question">Question</div>
-    <p class="answer">Answer</p>
+    <div class="question">Question 3</div>
+    <p class="answer">Answer 3</p>
   </div>
 
 
