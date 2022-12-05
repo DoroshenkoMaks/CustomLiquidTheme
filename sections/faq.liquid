@@ -22,7 +22,7 @@
     text-align: center;
     color: {{ section.settings.heading_color }};
   }
-  .question--block .question {
+  .question {
     padding: 1rem;
     font-size: 1.8rem;
     cursor: pointer;
@@ -36,12 +36,17 @@
 {%- endstyle -%}
 
 {% javascript %}
-  console.log('Hi');
-  document.querySelector(".question--block").addEventListener('click', (e) => {
-    e.stopPropagation();
-    const answerText = document.querySelector(".answer");
-    answerText.classList.toggle("open");
-  })
+
+  document.querySelectorAll(".question").forEach(item => {
+    item.addEventListener('click', (e) => {
+
+// console.log(section.settings.section__heading);
+
+      document.querySelectorAll('.answer').forEach(item => item.classList.remove('open'));
+      let answerText = item.nextElementSibling;
+      answerText.classList.toggle('open');
+    })
+  });
 {% endjavascript %}
 
 
@@ -53,11 +58,25 @@
 
   {%- for block in section.blocks -%}
     <div class="question--block">
-      <div onclick='openAnswer()' class="question">{{ block.settings.question }}</div>
-      <p class="answer">{{ block.settings.answer }}</p>
+      <div class="question">{{ block.settings.question }}</div>
+      <p class="answer {% if block.settings.is_open %}open{% endif %}">{{ block.settings.answer }}</p>
+
     </div>
   {%- endfor -%}
+
+
+  <div class="question">Question</div>
+  <p class="answer open">Answer</p>
+
+
+
+  <div class="question">Question</div>
+  <p class="answer">Answer</p>
+  <div class="question">Question</div>
+  <p class="answer">Answer</p>
+
 </div>
+
 
 {% schema %}
   {
@@ -70,20 +89,28 @@
         "default": "FAQ",
         "label": "Section Title"
 
-      }, {
+      },
+      {
         "type": "color",
         "id": "section_color",
         "label": "Section Background",
         "default": "#ffffff"
-      }, {
+      },
+      {
         "type": "color",
         "id": "heading_color",
         "label": "Heading color",
         "default": "#000000"
-      }, {
+      },
+      {
         "type": "checkbox",
         "id": "full-background",
         "label": "Fill full background",
+        "default": false
+      }, {
+        "type": "checkbox",
+        "id": "open-every",
+        "label": "Open each answer separately",
         "default": false
       }
     ],
@@ -102,6 +129,11 @@
             "id": "answer",
             "default": "<p>Answer</p>",
             "label": "Add a answer"
+          }, {
+            "type": "checkbox",
+            "id": "is_open",
+            "label": "Open answer by default",
+            "default": false
           }
         ]
       }
