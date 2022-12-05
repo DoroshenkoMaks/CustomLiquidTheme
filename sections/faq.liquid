@@ -2,15 +2,20 @@
   .section {
     position: relative;
   }
-  .background-full::before {
+  .background-full::before, 
+  .background-full::after {
     width: calc((100% - var(--page-width)) / 2);
     height: 100%;
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
-    transform: translateX(-100%);
     background: {{ section.settings.section_color}};
+  }
+  .background-full::before{
+    left: 0;
+  }
+  .background-full::after{
+    right: 0; 
   }
   .section__heading {
     font-size: 4.8rem;
@@ -46,7 +51,7 @@
         "id": "section__heading",
         "default": "FAQ",
         "label": "Section Title"
-        
+
       },
       {
         "type": "color",
