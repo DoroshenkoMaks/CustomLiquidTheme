@@ -1,0 +1,44 @@
+<div class="section">
+  {%- for block in section.blocks -%}
+    <div class="question--block">
+      <div class="question">{{ block.settings.question }}<div>
+      <p class="answer">{{ block.settings.answer }}</p>
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+  {
+    "name": "FAQ questions",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section__heading",
+        "default": "FAQ",
+        "label": "Section Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "FAQ Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "default": "FAQ",
+            "label": "Add a question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "default": "FAQ",
+            "label": "Add a answer"
+          }
+        ]
+   
+      }
+    ]
+  }
+{% endschema %}
