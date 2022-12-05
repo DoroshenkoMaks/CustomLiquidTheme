@@ -21,7 +21,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -29,7 +29,11 @@
           }
         }
       },
-      "block_order": ["heading", "text", "button"],
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -44,7 +48,14 @@
       }
     },
     "faq": {
-      "type": "faq"
+      "type": "faq",
+      "settings": {
+        "section__heading": "FAQ",
+        "section_color": "#ffffff",
+        "heading_color": "#000000",
+        "full-background": false,
+        "open-every": false
+      }
     },
     "rich_text": {
       "type": "rich-text",
@@ -52,18 +63,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Talk about your brand</p>",
+            "heading": "<p>Talk about your brand<\/p>",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         }
       },
-      "block_order": ["heading", "text"],
+      "block_order": [
+        "heading",
+        "text"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -123,7 +137,11 @@
           }
         }
       },
-      "block_order": ["collection-0", "product", "collection-1"],
+      "block_order": [
+        "collection-0",
+        "product",
+        "collection-1"
+      ],
       "settings": {
         "heading": "Multimedia collage",
         "heading_size": "h2",
@@ -140,7 +158,7 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "background-1",
@@ -155,7 +173,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -164,7 +182,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -173,13 +191,17 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
         }
       },
-      "block_order": ["column1", "column2", "column3"],
+      "block_order": [
+        "column1",
+        "column2",
+        "column3"
+      ],
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -197,41 +219,27 @@
         "padding_bottom": 36
       }
     },
-    "60282061-3a61-4392-ab22-eb7242c587e9": {
+    "b277a6d7-264d-4fe3-9eeb-ace8a5a2387d": {
       "type": "faq",
       "blocks": {
-        "ac6fa558-9ed9-47e6-b19c-6209f4d82000": {
+        "29baa73a-6d12-4242-bc1b-05b83d3da0b9": {
           "type": "text",
           "settings": {
             "question": "Question",
-            "answer": "<p>Answer</p>"
-          }
-        },
-        "ca0833d4-41f9-43fe-a68d-65de80e6dd61": {
-          "type": "text",
-          "settings": {
-            "question": "Question",
-            "answer": "<p>Answer</p>"
-          }
-        },
-        "f816f339-31aa-4ffb-9b9a-db01c2454bc4": {
-          "type": "text",
-          "settings": {
-            "question": "Question",
-            "answer": "<p>Answer</p>"
+            "answer": "<p>fdjkdnfkjvdf<\/p>",
+            "is_open": false
           }
         }
       },
       "block_order": [
-        "ac6fa558-9ed9-47e6-b19c-6209f4d82000",
-        "ca0833d4-41f9-43fe-a68d-65de80e6dd61",
-        "f816f339-31aa-4ffb-9b9a-db01c2454bc4"
+        "29baa73a-6d12-4242-bc1b-05b83d3da0b9"
       ],
       "settings": {
         "section__heading": "FAQ",
-        "section_color": "#ef6666",
+        "section_color": "#ffffff",
         "heading_color": "#000000",
-        "full-background": true
+        "full-background": false,
+        "open-every": false
       }
     }
   },
@@ -243,6 +251,6 @@
     "collage",
     "video",
     "multicolumn",
-    "60282061-3a61-4392-ab22-eb7242c587e9"
+    "b277a6d7-264d-4fe3-9eeb-ace8a5a2387d"
   ]
 }
