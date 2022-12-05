@@ -1,9 +1,7 @@
 <div class="section">
   {%- for block in section.blocks -%}
     <div class="question--block">
-      {%- comment -%}
-        <div class="question">{{ block.settings.question }}<div>
-      {%- endcomment -%}
+      <div class="question">{{ block.settings.question }}<div>
       <p class="answer">{{ block.settings.answer }}</p>
     </div>
   {%- endfor -%}
@@ -26,10 +24,16 @@
         "type": "text",
         "name": "FAQ Block",
         "settings": [
-
           {
-            "type": "richtext",
+            "type": "text",
+            "id": "question",
+            "default": "Question",
+            "label": "Add a question"
+          },
+          {
+            "type": "text",
             "id": "answer",
+            "default": "Answer",
             "label": "Add a answer"
           }
         ]
