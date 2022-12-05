@@ -59,23 +59,29 @@
   {%- for block in section.blocks -%}
     <div class="question--block">
       <div class="question">{{ block.settings.question }}</div>
-      <p class="answer {% if block.settings.is_open %}open{% endif %}">{{ block.settings.answer }}</p>
+      <p class="answer {% if block.settings.is_open %}open{% endif %}">{{ block.settings.answer | replace: 'p>', 'span>' }}</p>
 
     </div>
   {%- endfor -%}
 
 
-  {%- comment -%}
+
+  <div class="question--block">
+
+    <div class="question">Question</div>
+    <p class="answer">Answer</p>
+  </div>
+  <div class="question--block">
+
     <div class="question">Question</div>
     <p class="answer open">Answer</p>
-
-
+  </div>
+  <div class="question--block">
 
     <div class="question">Question</div>
     <p class="answer">Answer</p>
-    <div class="question">Question</div>
-    <p class="answer">Answer</p>
-  {%- endcomment -%}
+  </div>
+
 
 </div>
 
