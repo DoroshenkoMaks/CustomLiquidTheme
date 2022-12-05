@@ -227,7 +227,7 @@
           "settings": {
             "question": "Question 1",
             "answer": "<p>answer 2<\/p>",
-            "is_open": true
+            "is_open": false
           }
         },
         "5f54d4df-0252-4996-97f6-026bb6257770": {
@@ -235,7 +235,7 @@
           "settings": {
             "question": "Question 3",
             "answer": "<p>Answer 3<\/p>",
-            "is_open": true
+            "is_open": false
           }
         }
       },
