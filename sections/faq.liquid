@@ -1,3 +1,6 @@
+
+
+
 {%- style -%}
   .section {
     position: relative;
@@ -9,7 +12,7 @@
     content: "";
     position: absolute;
     top: 0;
-    background: {{ section.settings.section_color}};
+    background: {{ section.settings.section_color }};
   }
   .background-full::before{
     left: 0;
@@ -25,20 +28,56 @@
   .question--block .question {
     padding: 1rem;
     font-size: 1.8rem;
+    cursor: pointer;
+  }
+  .answer {
+    display: none;
+  }
+  .answer.open {
+    display: block;
   }
 {%- endstyle -%}
 
-<div class="page-width background{% if section.settings.full-background %}-full{% endif %}"  style="background-color: {{ section.settings.section_color}}">
+{% javascript %}
+console.log('Hi');
+document.querySelector(".question--block").addEventListener('click', (e)=> {
+  e.stopPropagation();
+  const answerText = document.querySelector(".answer");
+  console.log("done");
+  answerText.classList.toggle("open");
+})
+
+  // const openAnswer = function() {
+  //   const answerText = document.querySelector(".answer");
+  //   console.log(done);
+  //     answerText.classList.toggle("open");
+  // }
+
+
+{% endjavascript %}
+
+
+ 
+
+
+<div class="page-width background{% if section.settings.full-background %}-full{% endif %}"  style="background-color: {{ section.settings.section_color }}">
   {%- if section.settings.section__heading != blank -%}
     <h2 class="section__heading h2">{{ section.settings.section__heading | escape }}</h2>
   {%- endif -%}
 
   {%- for block in section.blocks -%}
     <div class="question--block">
-      <div class="question">{{ block.settings.question }}<div>
+      <div onclick=alert('HY') class="question">{{ block.settings.question }}<div>
       <p class="answer">{{ block.settings.answer }}</p>
     </div>
   {%- endfor -%}
+
+  <div class="question--block">
+    <div class="question">Question<div>
+    <p class="answer">Answer</p>
+  </div>
+
+
 </div>
 
 {% schema %}
@@ -57,7 +96,7 @@
         "type": "color",
         "id": "section_color",
         "label": "Section Background",
-        "default": "#FFFFFF"
+        "default": "#ffffff"
       },
       {
         "type": "color",
