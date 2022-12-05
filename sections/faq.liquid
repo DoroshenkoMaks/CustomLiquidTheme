@@ -1,9 +1,11 @@
 <div class="section">
+  {%- if section.settings.section__heading != blank -%}
+    <h2>{{ section.settings.section__heading | escape }}</h2>
+  {%- endif -%}
+  
   {%- for block in section.blocks -%}
     <div class="question--block">
-      {%- comment -%}
-        <div class="question">{{ block.settings.question }}<div>
-      {%- endcomment -%}
+      <div class="question">{{ block.settings.question }}<div>
       <p class="answer">{{ block.settings.answer }}</p>
     </div>
   {%- endfor -%}
@@ -11,7 +13,7 @@
 
 {% schema %}
   {
-    "name": "FAQ questions",
+    "name": "FAQ",
     "class": "section",
     "settings": [
       {
@@ -26,11 +28,16 @@
         "type": "text",
         "name": "FAQ Block",
         "settings": [
-
+          {
+            "type": "text",
+            "id": "question",
+            "default": "Question",
+            "label": "Add a question"
+          },
           {
             "type": "richtext",
             "id": "answer",
-            "default": "Answer",
+            "default": "<p>Answer</p>",
             "label": "Add a answer"
           }
         ]
