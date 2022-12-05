@@ -41,7 +41,7 @@
     item.addEventListener('click', (e) => {
 
 // console.log(section.settings.section__heading);
-      console.log(item);
+
       document.querySelectorAll('.answer').forEach(item => item.classList.remove('open'));
       let answerText = item.nextElementSibling;
       answerText.classList.toggle('open');
@@ -57,11 +57,11 @@
   {%- endif -%}
 
   {%- for block in section.blocks -%}
-    
+    <div class="question--block">
       <div class="question">{{ block.settings.question }}</div>
       <p class="answer {% if block.settings.is_open %}open{% endif %}">{{ block.settings.answer }}</p>
 
-    
+    </div>
   {%- endfor -%}
 
 
@@ -129,7 +129,7 @@
           }, {
             "type": "richtext",
             "id": "answer",
-        
+            "default": "<p>Answer</p>",
             "label": "Add a answer"
           }, {
             "type": "checkbox",
