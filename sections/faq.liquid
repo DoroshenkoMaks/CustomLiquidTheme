@@ -1,6 +1,13 @@
-<div class="section">
+{%- style -%}
+  .section__heading {
+    font-size: 4.8rem;
+    text-align: center;
+  }
+{%- endstyle -%}
+
+<div class="section page-width" style="background-color: {{ section.settings.color_accent }}">
   {%- if section.settings.section__heading != blank -%}
-    <h2>{{ section.settings.section__heading | escape }}</h2>
+    <h2 class="section__heading h2">{{ section.settings.section__heading | escape }}</h2>
   {%- endif -%}
 
   {%- for block in section.blocks -%}
@@ -21,6 +28,12 @@
         "id": "section__heading",
         "default": "FAQ",
         "label": "Section Title"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Section Background",
+        "default": "#FFFFFF"
       }
     ],
     "blocks": [
