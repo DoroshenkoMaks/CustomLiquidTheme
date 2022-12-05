@@ -41,7 +41,7 @@
     item.addEventListener('click', (e) => {
 
 // console.log(section.settings.section__heading);
-
+      console.log(item);
       document.querySelectorAll('.answer').forEach(item => item.classList.remove('open'));
       let answerText = item.nextElementSibling;
       answerText.classList.toggle('open');
