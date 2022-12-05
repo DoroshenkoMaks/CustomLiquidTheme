@@ -9,7 +9,9 @@
     font-size: 1.8rem;
   }
 {%- endstyle -%}
-
+{%- if section.settings.full-background -%}
+  <p>BACK is full</p>
+{%- endif -%}
 <div class="section page-width" style="background-color: {{ section.settings.section_color}}">
   {%- if section.settings.section__heading != blank -%}
     <h2 class="section__heading h2">{{ section.settings.section__heading | escape }}</h2>
