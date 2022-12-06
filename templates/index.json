@@ -300,7 +300,7 @@
         "section_color": "#c38c8c",
         "heading_color": "#000000",
         "full-background": false,
-        "openEvery": true
+        "openEvery": false
       }
     },
     "2a9451d3-cfa2-4189-8732-1cea13fca283": {
