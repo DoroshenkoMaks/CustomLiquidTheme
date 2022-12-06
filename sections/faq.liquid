@@ -38,24 +38,42 @@
   }
 {%- endstyle -%}
 
+
+{%- assign openEvery = section.settings.openEvery -%}
+
+<script>
+  let open_every = {{ openEvery | json }};
+</script>
+
 {% javascript %}
 
-  // let test = '{% section.settings.open-every %}'
-// console.log(test);
+  let faqSectionsId = [];
+  console.log(document.getElementById('MainContent').childNodes.forEach(elem => {
+
+
+    if (elem.id && elem.id.includes('faq')) {
+      faqSectionsId.push(elem.id)
+    }
+  }));
+  console.log(faqSectionsId);
 
   document.querySelectorAll(".question").forEach(question => {
     question.addEventListener('click', (e) => {
 
-// If current close, close all and open current
-// Else close current
-      if (question.nextElementSibling.classList.value == 'answer') {
-        document.querySelectorAll('.answer').forEach(answer => {
-          answer.classList.remove('open');
-        });
+
+      if (open_every) {
         question.nextElementSibling.classList.toggle('open');
       } else {
-        question.nextElementSibling.classList.remove('open');
+        if (question.nextElementSibling.classList.value == 'answer') {
+          document.querySelectorAll('.answer').forEach(answer => {
+            answer.classList.remove('open');
+          });
+          question.nextElementSibling.classList.toggle('open');
+        } else {
+          question.nextElementSibling.classList.remove('open');
+        }
       }
+
 
 
     })
@@ -79,25 +97,23 @@
 
 
 
-  {%- comment -%}
-    <div class="question--block">
+  <div class="question--block">
     <div class="question">Question 1</div>
     <p class="answer">Answer 1</p>
-    </div>
+  </div>
 
-    <div class="question--block">
+  <div class="question--block">
     <div class="question">Question 2</div>
     <p class="answer open">Answer 2</p>
-    </div>
+  </div>
 
-    <div class="question--block">
+  <div class="question--block">
     <div class="question">Question 3</div>
     <p class="answer">Answer 3</p>
-    </div>
-  {%- endcomment -%}
-
+  </div>
 
 </section>
+
 
 
 {% schema %}
@@ -132,9 +148,9 @@
         "default": false
       }, {
         "type": "checkbox",
-        "id": "open-every",
+        "id": "openEvery",
         "label": "Open each answer separately",
-        "default": false
+        "default": true
       }
     ],
     "blocks": [
@@ -163,9 +179,7 @@
     ],
     "presets": [
       {
-
         "name": "FAQ"
-
       }
     ]
   }
