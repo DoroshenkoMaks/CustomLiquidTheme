@@ -244,9 +244,9 @@
       ],
       "settings": {
         "title": "FAQ 1",
-        "background": "#ffcaca",
-        "heading_color": "#5f3333",
-        "is_full_background": true,
+        "background": "#ed1d1d",
+        "heading_color": "#ff0000",
+        "is_full_background": false,
         "is_every_open": false
       }
     }
