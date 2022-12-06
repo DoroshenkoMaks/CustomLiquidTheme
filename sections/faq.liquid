@@ -1,120 +1,96 @@
+<link rel="stylesheet" href="../assets/faq.css">
+
 {%- style -%}
-  .section {
-    position: relative;
+  .faq {
+    background-color: {{ section.settings.background }};
   }
+
   .background-full::before,
   .background-full::after {
-    width: calc((100% - var(--page-width)) / 2);
-    height: 100%;
-    content: "";
-    position: absolute;
-    top: 0;
-    background: {{ section.settings.section_color }};
+    background: {{ section.settings.background }};
   }
-  .background-full::before {
-    left: 0;
-  }
-  .background-full::after {
-    right: 0;
-  }
+
   .section__heading {
-    font-size: 4.8rem;
-    text-align: center;
     color: {{ section.settings.heading_color }};
-  }
-  .question {
-    padding: 1rem;
-    font-size: 1.8rem;
-    cursor: pointer;
-    border: 1px solid #000;
-  }
-  .answer {
-    padding: 1rem;
-    border: 1px solid red;
-    display: none;
-  }
-  .answer.open {
-    display: block;
   }
 {%- endstyle -%}
 
+
+{%- assign openEvery = section.settings.is_every_open -%}
+
+<script>
+  let open_every = {{ openEvery | json }};
+</script>
+
 {% javascript %}
 
-  // let test = '{% section.settings.open-every %}'
-// console.log(test);
 
-  document.querySelectorAll(".question").forEach(question => {
-    question.addEventListener('click', (e) => {
-
-// If current close, close all and open current
-// Else close current
-      if (question.nextElementSibling.classList.value == 'answer') {
-        document.querySelectorAll('.answer').forEach(answer => {
-          answer.classList.remove('open');
-        });
-        question.nextElementSibling.classList.toggle('open');
-      } else {
-        question.nextElementSibling.classList.remove('open');
-      }
+  const sectionListeners = function(questionArr, answerArr) {
+    questionArr.forEach(question => {
+      question.addEventListener('click', (e) => {
 
 
-    })
+        if (open_every) {
+          question.nextElementSibling.classList.toggle('open');
+        } else {
+          if (question.nextElementSibling.classList.value == 'answer') {
+            answerArr.forEach(answer => {
+              answer.classList.remove('open');
+            });
+            question.nextElementSibling.classList.toggle('open');
+          } else {
+            question.nextElementSibling.classList.remove('open');
+          }
+        }
+      })
+    });
+  }
+
+  let allFaqSections = Array.prototype.slice.call(document.getElementsByClassName('faq'));
+
+  allFaqSections.forEach(elem => {
+    let allQuestionsArray = Array.prototype.slice.call(elem.getElementsByClassName('question'));
+    let allAnswersArray = Array.prototype.slice.call(elem.getElementsByClassName('answer'));
+
+    sectionListeners(allQuestionsArray, allAnswersArray);
   });
 {% endjavascript %}
 
 
 
-<section class="page-width background{% if section.settings.full-background %}-full{% endif %}" style="background-color: {{ section.settings.section_color }}">
-  {%- if section.settings.section__heading != blank -%}
-    <h2 class="section__heading h2">{{ section.settings.section__heading | escape }}</h2>
+<section class="faq page-width background{% if section.settings.is_full_background %}-full{% endif %}">
+  {%- if section.settings.title != blank -%}
+    <h2 class="section__heading h2">{{ section.settings.title | escape }}</h2>
   {%- endif -%}
 
   {%- for block in section.blocks -%}
     <div class="question--block">
-      <div class="question">{{ block.settings.question }}</div>
-      <p class="answer {% if block.settings.is_open %}open{% endif %}">{{ block.settings.answer | replace: 'p>', 'span>' }}</p>
+      <div class="question">{{ block.settings.question_title }}</div>
+      <p class="answer {% if block.settings.is_open %}open{% endif %}">{{ block.settings.answer_title | replace: 'p>', 'span>' }}</p>
 
     </div>
   {%- endfor -%}
 
-
-
-  {%- comment -%}
-    <div class="question--block">
-    <div class="question">Question 1</div>
-    <p class="answer">Answer 1</p>
-    </div>
-
-    <div class="question--block">
-    <div class="question">Question 2</div>
-    <p class="answer open">Answer 2</p>
-    </div>
-
-    <div class="question--block">
-    <div class="question">Question 3</div>
-    <p class="answer">Answer 3</p>
-    </div>
-  {%- endcomment -%}
-
-
 </section>
+
 
 
 {% schema %}
   {
     "name": "FAQ",
     "class": "section",
+    "tag": "section",
     "settings": [
       {
         "type": "text",
-        "id": "section__heading",
+        "id": "title",
         "default": "FAQ",
         "label": "Section Title"
 
       },
       {
         "type": "color",
-        "id": "section_color",
+        "id": "background",
         "label": "Section Background",
         "default": "#ffffff"
       },
@@ -127,12 +103,12 @@
       },
       {
         "type": "checkbox",
-        "id": "full-background",
+        "id": "is_full_background",
         "label": "Fill full background",
         "default": false
       }, {
         "type": "checkbox",
-        "id": "open-every",
+        "id": "is_every_open",
         "label": "Open each answer separately",
         "default": false
       }
@@ -144,12 +120,12 @@
         "settings": [
           {
             "type": "text",
-            "id": "question",
+            "id": "question_title",
             "default": "Question",
             "label": "Add a question"
           }, {
             "type": "richtext",
-            "id": "answer",
+            "id": "answer_title",
             "default": "<p>Answer</p>",
             "label": "Add a answer"
           }, {
@@ -163,9 +139,7 @@
     ],
     "presets": [
       {
-
         "name": "FAQ"
-
       }
     ]
   }
