@@ -1,9 +1,6 @@
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .faq {
-    background-color: {{ section.settings.background }};
-  }
 
   .background-full::before,
   .background-full::after {
@@ -58,7 +55,7 @@
 
 
 
-<section class="faq page-width background{% if section.settings.is_full_background %}-full{% endif %}">
+<section class="faq page-width background{% if section.settings.is_full_background %}-full{% endif %}" style="{{ section.settings.background }}">
   {%- if section.settings.title != blank -%}
     <h2 class="section__heading h2">{{ section.settings.title | escape }}</h2>
   {%- endif -%}
