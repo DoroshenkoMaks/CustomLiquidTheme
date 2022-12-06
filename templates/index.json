@@ -246,39 +246,8 @@
         "title": "FAQ 1",
         "background": "#ffcaca",
         "heading_color": "#5f3333",
-        "is_full_background": false,
+        "is_full_background": true,
         "is_every_open": true
-      }
-    },
-    "aaf129d0-b55c-442b-b185-6a4bf2b21a52": {
-      "type": "faq",
-      "blocks": {
-        "c9b5e1f7-6f66-4c64-9eb0-35ffc1cf171c": {
-          "type": "text",
-          "settings": {
-            "is_open": false
-          }
-        },
-        "5cc66807-1eb0-4490-a202-20719a573c69": {
-          "type": "text",
-          "settings": {
-            "is_open": true
-          }
-        },
-        "efde3e7a-6ea3-4a7b-a09a-6062d2a665ba": {
-          "type": "text",
-          "settings": {
-            "is_open": false
-          }
-        }
-      },
-      "block_order": [
-        "c9b5e1f7-6f66-4c64-9eb0-35ffc1cf171c",
-        "5cc66807-1eb0-4490-a202-20719a573c69",
-        "efde3e7a-6ea3-4a7b-a09a-6062d2a665ba"
-      ],
-      "settings": {
-        "heading_color": "#000000"
       }
     }
   },
@@ -289,7 +258,6 @@
     "collage",
     "video",
     "multicolumn",
-    "b277a6d7-264d-4fe3-9eeb-ace8a5a2387d",
-    "aaf129d0-b55c-442b-b185-6a4bf2b21a52"
+    "b277a6d7-264d-4fe3-9eeb-ace8a5a2387d"
   ]
 }
