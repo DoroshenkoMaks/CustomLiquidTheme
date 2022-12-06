@@ -244,10 +244,51 @@
       ],
       "settings": {
         "title": "FAQ 1",
-        "background": "#ed1d1d",
-        "heading_color": "#ff0000",
-        "is_full_background": false,
+        "background": "#f3f3f3",
+        "heading_color": "#000000",
+        "is_full_background": true,
         "is_every_open": false
+      }
+    },
+    "1b50e698-7ff0-4068-9e1d-44938a34de71": {
+      "type": "faq",
+      "blocks": {
+        "b1210644-bcde-4a05-941d-942067f364b9": {
+          "type": "text",
+          "settings": {
+            "question_title": "Question 1",
+            "answer_title": "<p>AnswerLorem ipsum dolor sit amet consectetur adipisicing elit. <\/p>",
+            "is_open": false
+          }
+        },
+        "38fcf560-2778-49a0-adc2-8214b4052e35": {
+          "type": "text",
+          "settings": {
+            "question_title": "Question 2",
+            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis <\/p>",
+            "is_open": true
+          }
+        },
+        "495a7142-3ef7-4a98-a9a5-2c985f928ce5": {
+          "type": "text",
+          "settings": {
+            "question_title": "Question",
+            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis adipisci possimus itaque eos vel at unde ullam voluptas ea minus architecto aspernatur.<\/p>",
+            "is_open": false
+          }
+        }
+      },
+      "block_order": [
+        "b1210644-bcde-4a05-941d-942067f364b9",
+        "38fcf560-2778-49a0-adc2-8214b4052e35",
+        "495a7142-3ef7-4a98-a9a5-2c985f928ce5"
+      ],
+      "settings": {
+        "title": "FAQ 2",
+        "background": "#fff1d7",
+        "heading_color": "#000000",
+        "is_full_background": false,
+        "is_every_open": true
       }
     }
   },
@@ -258,6 +299,7 @@
     "collage",
     "video",
     "multicolumn",
-    "b277a6d7-264d-4fe3-9eeb-ace8a5a2387d"
+    "b277a6d7-264d-4fe3-9eeb-ace8a5a2387d",
+    "1b50e698-7ff0-4068-9e1d-44938a34de71"
   ]
 }
