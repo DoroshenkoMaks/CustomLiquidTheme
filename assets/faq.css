@@ -9,6 +9,7 @@
   width: calc((100% - var(--page-width)) / 2);
   height: 100%;
   content: "";
+  background: inherit;
   position: absolute;
   top: 0;
 }

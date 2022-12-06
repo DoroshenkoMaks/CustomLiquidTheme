@@ -1,21 +1,5 @@
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-  .faq {
-    background-color: {{ section.settings.background }};
-  }
-
-  .background-full::before,
-  .background-full::after {
-    background: {{ section.settings.background }};
-  }
-
-  .section__heading {
-    color: {{ section.settings.heading_color }};
-  }
-{%- endstyle -%}
-
-
 {%- assign openEvery = section.settings.is_every_open -%}
 
 <script>
@@ -58,9 +42,9 @@
 
 
 
-<section class="faq page-width background{% if section.settings.is_full_background %}-full{% endif %}">
+<section class="faq page-width {% if section.settings.is_full_background %}background-full{% endif %}" style="background: {{ section.settings.background }};">
   {%- if section.settings.title != blank -%}
-    <h2 class="section__heading h2">{{ section.settings.title | escape }}</h2>
+    <h2 class="section__heading h2" style="color: {{ section.settings.heading_color }};">{{ section.settings.title | escape }}</h2>
   {%- endif -%}
 
   {%- for block in section.blocks -%}
