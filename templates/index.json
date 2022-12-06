@@ -247,7 +247,69 @@
         "section_color": "#c38c8c",
         "heading_color": "#000000",
         "full-background": false,
-        "open-every": false
+        "openEvery": true
+      }
+    },
+    "2a9451d3-cfa2-4189-8732-1cea13fca283": {
+      "type": "faq",
+      "blocks": {
+        "38bf306f-8176-4342-a237-e372372cf50b": {
+          "type": "text",
+          "settings": {
+            "question": "Question",
+            "answer": "<p>Answer<\/p>",
+            "is_open": false
+          }
+        },
+        "74db0f27-1eda-46fc-8b75-ac949d96ec4a": {
+          "type": "text",
+          "settings": {
+            "question": "Question",
+            "answer": "<p>Answer<\/p>",
+            "is_open": false
+          }
+        }
+      },
+      "block_order": [
+        "38bf306f-8176-4342-a237-e372372cf50b",
+        "74db0f27-1eda-46fc-8b75-ac949d96ec4a"
+      ],
+      "settings": {
+        "section__heading": "FAQ",
+        "section_color": "#ffffff",
+        "heading_color": "#000000",
+        "full-background": false
+      }
+    },
+    "a1111703-8e1d-4a46-bf68-f51623fc93ba": {
+      "type": "faq",
+      "blocks": {
+        "bb88a929-5fa2-42b5-9f97-a6ae318b8df9": {
+          "type": "text",
+          "settings": {
+            "question": "Question",
+            "answer": "<p>Answer<\/p>",
+            "is_open": false
+          }
+        },
+        "a66330ff-aa2d-45d2-ad59-52abccaddfb8": {
+          "type": "text",
+          "settings": {
+            "question": "Question",
+            "answer": "<p>Answer<\/p>",
+            "is_open": false
+          }
+        }
+      },
+      "block_order": [
+        "bb88a929-5fa2-42b5-9f97-a6ae318b8df9",
+        "a66330ff-aa2d-45d2-ad59-52abccaddfb8"
+      ],
+      "settings": {
+        "section__heading": "FAQ",
+        "section_color": "#ffffff",
+        "heading_color": "#000000",
+        "full-background": false
       }
     }
   },
@@ -258,6 +320,8 @@
     "collage",
     "video",
     "multicolumn",
-    "b277a6d7-264d-4fe3-9eeb-ace8a5a2387d"
+    "b277a6d7-264d-4fe3-9eeb-ace8a5a2387d",
+    "2a9451d3-cfa2-4189-8732-1cea13fca283",
+    "a1111703-8e1d-4a46-bf68-f51623fc93ba"
   ]
 }
