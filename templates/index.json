@@ -21,7 +21,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -29,7 +29,11 @@
           }
         }
       },
-      "block_order": ["heading", "text", "button"],
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -49,18 +53,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Talk about your brand</p>",
+            "heading": "<p>Talk about your brand<\/p>",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         }
       },
-      "block_order": ["heading", "text"],
+      "block_order": [
+        "heading",
+        "text"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -120,7 +127,11 @@
           }
         }
       },
-      "block_order": ["collection-0", "product", "collection-1"],
+      "block_order": [
+        "collection-0",
+        "product",
+        "collection-1"
+      ],
       "settings": {
         "heading": "Multimedia collage",
         "heading_size": "h2",
@@ -137,7 +148,7 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "background-1",
@@ -152,7 +163,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -161,7 +172,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -170,13 +181,17 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
         }
       },
-      "block_order": ["column1", "column2", "column3"],
+      "block_order": [
+        "column1",
+        "column2",
+        "column3"
+      ],
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -200,30 +215,70 @@
         "29baa73a-6d12-4242-bc1b-05b83d3da0b9": {
           "type": "text",
           "settings": {
-            "question": "Question 1",
-            "answer": "<p>answer 2</p>",
-            "is_open": false
+            "question_title": "Question 1",
+            "answer_title": "<p>AnswerLorem ipsum dolor sit amet consectetur adipisicing elit. <\/p>",
+            "is_open": true
           }
         },
         "5f54d4df-0252-4996-97f6-026bb6257770": {
           "type": "text",
           "settings": {
-            "question": "Question 3",
-            "answer": "<p>Answer 3</p>",
+            "question_title": "Question 2",
+            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis <\/p>",
+            "is_open": false
+          }
+        },
+        "377cf420-d752-4660-a67d-12d84d531e9b": {
+          "type": "text",
+          "settings": {
+            "question_title": "Question 3",
+            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis adipisci possimus itaque eos vel at unde ullam voluptas ea minus architecto aspernatur.<\/p>",
             "is_open": false
           }
         }
       },
       "block_order": [
         "29baa73a-6d12-4242-bc1b-05b83d3da0b9",
-        "5f54d4df-0252-4996-97f6-026bb6257770"
+        "5f54d4df-0252-4996-97f6-026bb6257770",
+        "377cf420-d752-4660-a67d-12d84d531e9b"
       ],
       "settings": {
-        "section__heading": "FAQ",
-        "section_color": "#ffffff",
-        "heading_color": "#000000",
-        "full-background": false,
-        "open-every": false
+        "title": "FAQ 1",
+        "background": "#ffcaca",
+        "heading_color": "#5f3333",
+        "is_full_background": false,
+        "is_every_open": true
+      }
+    },
+    "aaf129d0-b55c-442b-b185-6a4bf2b21a52": {
+      "type": "faq",
+      "blocks": {
+        "c9b5e1f7-6f66-4c64-9eb0-35ffc1cf171c": {
+          "type": "text",
+          "settings": {
+            "is_open": false
+          }
+        },
+        "5cc66807-1eb0-4490-a202-20719a573c69": {
+          "type": "text",
+          "settings": {
+            "is_open": true
+          }
+        },
+        "efde3e7a-6ea3-4a7b-a09a-6062d2a665ba": {
+          "type": "text",
+          "settings": {
+            "is_open": false
+          }
+        }
+      },
+      "block_order": [
+        "c9b5e1f7-6f66-4c64-9eb0-35ffc1cf171c",
+        "5cc66807-1eb0-4490-a202-20719a573c69",
+        "efde3e7a-6ea3-4a7b-a09a-6062d2a665ba"
+      ],
+      "settings": {
+        "heading_color": "#000000"
       }
     }
   },
@@ -234,6 +289,7 @@
     "collage",
     "video",
     "multicolumn",
-    "b277a6d7-264d-4fe3-9eeb-ace8a5a2387d"
+    "b277a6d7-264d-4fe3-9eeb-ace8a5a2387d",
+    "aaf129d0-b55c-442b-b185-6a4bf2b21a52"
   ]
 }
