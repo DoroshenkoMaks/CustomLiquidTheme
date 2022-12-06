@@ -40,22 +40,31 @@
 
 {% javascript %}
 
-  document.querySelectorAll(".question").forEach(item => {
-    item.addEventListener('click', (e) => {
+  // let test = '{% section.settings.open-every %}'
+// console.log(test);
 
-      document.querySelectorAll('.answer').forEach(item => {
-        item.classList.remove('open');
-      });
+  document.querySelectorAll(".question").forEach(question => {
+    question.addEventListener('click', (e) => {
 
-      let answerText = item.nextElementSibling;
-      answerText.classList.toggle('open');
+// If current close, close all and open current
+// Else close current
+      if (question.nextElementSibling.classList.value == 'answer') {
+        document.querySelectorAll('.answer').forEach(answer => {
+          answer.classList.remove('open');
+        });
+        question.nextElementSibling.classList.toggle('open');
+      } else {
+        question.nextElementSibling.classList.remove('open');
+      }
+
+
     })
   });
 {% endjavascript %}
 
 
 
-<div class="page-width background{% if section.settings.full-background %}-full{% endif %}" style="background-color: {{ section.settings.section_color }}">
+<section class="page-width background{% if section.settings.full-background %}-full{% endif %}" style="background-color: {{ section.settings.section_color }}">
   {%- if section.settings.section__heading != blank -%}
     <h2 class="section__heading h2">{{ section.settings.section__heading | escape }}</h2>
   {%- endif -%}
@@ -70,24 +79,25 @@
 
 
 
-  <div class="question--block">
-
+  {%- comment -%}
+    <div class="question--block">
     <div class="question">Question 1</div>
     <p class="answer">Answer 1</p>
-  </div>
-  <div class="question--block">
+    </div>
 
+    <div class="question--block">
     <div class="question">Question 2</div>
     <p class="answer open">Answer 2</p>
-  </div>
-  <div class="question--block">
+    </div>
 
+    <div class="question--block">
     <div class="question">Question 3</div>
     <p class="answer">Answer 3</p>
-  </div>
+    </div>
+  {%- endcomment -%}
 
 
-</div>
+</section>
 
 
 {% schema %}
