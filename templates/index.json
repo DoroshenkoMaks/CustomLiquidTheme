@@ -21,7 +21,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -29,7 +29,11 @@
           }
         }
       },
-      "block_order": ["heading", "text", "button"],
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -49,18 +53,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Talk about your brand</p>",
+            "heading": "<p>Talk about your brand<\/p>",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         }
       },
-      "block_order": ["heading", "text"],
+      "block_order": [
+        "heading",
+        "text"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -120,7 +127,11 @@
           }
         }
       },
-      "block_order": ["collection-0", "product", "collection-1"],
+      "block_order": [
+        "collection-0",
+        "product",
+        "collection-1"
+      ],
       "settings": {
         "heading": "Multimedia collage",
         "heading_size": "h2",
@@ -137,7 +148,7 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "background-1",
@@ -152,7 +163,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -161,7 +172,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -170,13 +181,17 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
         }
       },
-      "block_order": ["column1", "column2", "column3"],
+      "block_order": [
+        "column1",
+        "column2",
+        "column3"
+      ],
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -201,7 +216,7 @@
           "type": "text",
           "settings": {
             "question_title": "Question 1",
-            "answer_title": "<p>AnswerLorem ipsum dolor sit amet consectetur adipisicing elit. </p>",
+            "answer_title": "<p>AnswerLorem ipsum dolor sit amet consectetur adipisicing elit. <\/p>",
             "is_open": true
           }
         },
@@ -209,7 +224,7 @@
           "type": "text",
           "settings": {
             "question_title": "Question 2",
-            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis </p>",
+            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis <\/p>",
             "is_open": false
           }
         },
@@ -217,8 +232,8 @@
           "type": "text",
           "settings": {
             "question_title": "Question 3",
-            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis adipisci possimus itaque eos vel at unde ullam voluptas ea minus architecto aspernatur.</p>",
-            "is_open": false
+            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis adipisci possimus itaque eos vel at unde ullam voluptas ea minus architecto aspernatur.<\/p>",
+            "is_open": true
           }
         }
       },
@@ -232,7 +247,7 @@
         "background": "#f3f3f3",
         "heading_color": "#000000",
         "is_full_background": true,
-        "is_every_open": true
+        "is_every_open": false
       }
     },
     "1b50e698-7ff0-4068-9e1d-44938a34de71": {
@@ -242,7 +257,7 @@
           "type": "text",
           "settings": {
             "question_title": "Question 1",
-            "answer_title": "<p>AnswerLorem ipsum dolor sit amet consectetur adipisicing elit. </p>",
+            "answer_title": "<p>AnswerLorem ipsum dolor sit amet consectetur adipisicing elit. <\/p>",
             "is_open": false
           }
         },
@@ -250,7 +265,7 @@
           "type": "text",
           "settings": {
             "question_title": "Question 2",
-            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis </p>",
+            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis <\/p>",
             "is_open": true
           }
         },
@@ -258,7 +273,7 @@
           "type": "text",
           "settings": {
             "question_title": "Question",
-            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis adipisci possimus itaque eos vel at unde ullam voluptas ea minus architecto aspernatur.</p>",
+            "answer_title": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facilis libero nostrum neque repellendus, optio assumenda quis adipisci possimus itaque eos vel at unde ullam voluptas ea minus architecto aspernatur.<\/p>",
             "is_open": false
           }
         }
@@ -273,7 +288,7 @@
         "background": "#fff1d7",
         "heading_color": "#000000",
         "is_full_background": false,
-        "is_every_open": false
+        "is_every_open": true
       }
     }
   },
