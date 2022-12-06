@@ -1,20 +1,15 @@
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 
-{%- assign openEvery = section.settings.is_every_open -%}
-
-<script>
-  let open_every = {{ openEvery | json }};
-</script>
-
 {% javascript %}
 
+  const sectionListeners = function(questionArr, answerArr, isEveryOpen) {
 
-  const sectionListeners = function(questionArr, answerArr) {
     questionArr.forEach(question => {
+
       question.addEventListener('click', (e) => {
 
 
-        if (open_every) {
+        if (JSON.parse(isEveryOpen)) {
           question.nextElementSibling.classList.toggle('open');
         } else {
           if (question.nextElementSibling.classList.value == 'answer') {
@@ -33,16 +28,17 @@
   let allFaqSections = Array.prototype.slice.call(document.getElementsByClassName('faq'));
 
   allFaqSections.forEach(elem => {
+
     let allQuestionsArray = Array.prototype.slice.call(elem.getElementsByClassName('question'));
     let allAnswersArray = Array.prototype.slice.call(elem.getElementsByClassName('answer'));
 
-    sectionListeners(allQuestionsArray, allAnswersArray);
+    sectionListeners(allQuestionsArray, allAnswersArray, elem.dataset.everyOpen);
   });
 {% endjavascript %}
 
 
 
-<section class="faq page-width {% if section.settings.is_full_background %}background-full{% endif %}" style="background: {{ section.settings.background }};">
+<section class="faq page-width {% if section.settings.is_full_background %}background-full{% endif %}" style="background: {{ section.settings.background }};" data-every-open="{{ section.settings.is_every_open }}">
   {%- if section.settings.title != blank -%}
     <h2 class="section__heading h2" style="color: {{ section.settings.heading_color }};">{{ section.settings.title | escape }}</h2>
   {%- endif -%}
